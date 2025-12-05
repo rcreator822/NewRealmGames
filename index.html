@@ -1,0 +1,133 @@
+<script>
+  var win = window.open();
+  var url = "home.html";
+
+  win.document.title = "Chill Guy Hub";
+
+  var link = win.document.createElement('link');
+  link.rel = "icon";
+  link.href = "chillguy.png";
+  win.document.head.appendChild(link);
+
+  win.document.body.style.margin = "0";
+  win.document.body.style.padding = "0";
+  win.document.body.style.overflow = "hidden";
+
+  var iframe = win.document.createElement('iframe');
+  iframe.style.position = "fixed";
+  iframe.style.top = "0";
+  iframe.style.left = "0";
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.style.border = "none";
+  iframe.src = url;
+  iframe.id = "chillFrame";
+  win.document.body.appendChild(iframe);
+
+  var wrapper = win.document.createElement('div');
+  wrapper.style.position = "fixed";
+  wrapper.style.top = "10px";
+  wrapper.style.left = "50%";
+  wrapper.style.transform = "translateX(-50%)";
+  wrapper.style.zIndex = "9999";
+  wrapper.style.display = "flex";
+  wrapper.style.flexDirection = "row";
+  wrapper.style.gap = "20px";
+
+  var hbtn = win.document.createElement('button');
+  hbtn.innerHTML = '<img src="/img/home.png" alt="Home" style="width:24px;height:24px;">';
+  hbtn.style.padding = "8px 12px";
+  hbtn.style.background = "rgba(0,0,0,0.6)";
+  hbtn.style.color = "white";
+  hbtn.style.border = "none";
+  hbtn.style.borderRadius = "4px";
+  hbtn.style.cursor = "pointer";
+  hbtn.id = "hbtn";
+
+  var gbtn = win.document.createElement('button');
+  gbtn.innerHTML = '<img src="/img/games.png" alt="Games" style="width:24px;height:24px;">';
+  gbtn.style.padding = "8px 12px";
+  gbtn.style.background = "rgba(0,0,0,0.6)";
+  gbtn.style.color = "white";
+  gbtn.style.border = "none";
+  gbtn.style.borderRadius = "4px";
+  gbtn.style.cursor = "pointer";
+  gbtn.id = "gbtn";
+
+  var nbtn = win.document.createElement('button');
+  nbtn.innerHTML = '<img src="/img/new.png" alt="Blank" style="width:24px;height:24px;">';
+  nbtn.style.padding = "8px 12px";
+  nbtn.style.background = "rgba(0,0,0,0.6)";
+  nbtn.style.color = "white";
+  nbtn.style.border = "none";
+  nbtn.style.borderRadius = "4px";
+  nbtn.style.cursor = "pointer";
+  nbtn.id = "nbtn";
+
+  var bbtn = win.document.createElement('button');
+  bbtn.innerHTML = '<img src="/img/browser.png" alt="Browser" style="width:24px;height:24px;">';
+  bbtn.style.padding = "8px 12px";
+  bbtn.style.background = "rgba(0,0,0,0.6)";
+  bbtn.style.color = "white";
+  bbtn.style.border = "none";
+  bbtn.style.borderRadius = "4px";
+  bbtn.style.cursor = "pointer";
+  bbtn.id = "bbtn";
+
+  var cbtn = win.document.createElement('button');
+  cbtn.innerHTML = '<img src="/img/code.png" alt="Code" style="width:24px;height:24px;">';
+  cbtn.style.padding = "8px 12px";
+  cbtn.style.background = "rgba(0,0,0,0.6)";
+  cbtn.style.color = "white";
+  cbtn.style.border = "none";
+  cbtn.style.borderRadius = "4px";
+  cbtn.style.cursor = "pointer";
+  cbtn.id = "cbtn";
+
+  wrapper.appendChild(hbtn);
+  wrapper.appendChild(gbtn);
+  wrapper.appendChild(nbtn);
+  wrapper.appendChild(bbtn);
+  wrapper.appendChild(cbtn);
+  win.document.body.appendChild(wrapper);
+
+  var style = win.document.createElement('style');
+  style.textContent = `
+    #hbtn:hover, #gbtn:hover, #nbtn:hover, #bbtn:hover, #cbtn:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease;
+    }
+  `;
+  win.document.head.appendChild(style);
+
+  var script = win.document.createElement('script');
+  script.textContent = `
+    function home() {
+      document.getElementById('chillFrame').src = 'home.html';
+    }
+    document.getElementById('hbtn').onclick = home;
+
+    function games() {
+      document.getElementById('chillFrame').src = 'games.html';
+    }
+    document.getElementById('gbtn').onclick = games;
+
+    function blank() {
+      window.open("https://chillguyhub.netlify.app", "_blank");
+    }
+    document.getElementById('nbtn').onclick = blank;
+
+    function browser() {
+      window.open("https://chillguyhub.netlify.app/wrapper.html", "_blank");
+    }
+    document.getElementById('bbtn').onclick = browser;
+
+    function code() {
+      window.open("https://github.com/rcreator822/ChillGuyHub/", "_blank");
+    }
+    document.getElementById('cbtn').onclick = code;
+  `;
+  win.document.head.appendChild(script);
+
+  window.location.href = "https://classroom.google.com";
+</script>

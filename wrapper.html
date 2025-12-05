@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chill Guy Hub</title>
+    <link rel="icon" href="chillguy.png" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #chillFrame {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      #buttonWrapper {
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9999;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-btn {
+        padding: 8px 12px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .nav-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .nav-btn img {
+        width: 24px;
+        height: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="chillFrame" src="home.html"></iframe>
+
+    <div id="buttonWrapper">
+      <button class="nav-btn" onclick="goHome()" title="Home">
+        <img src="/img/home.png" alt="Home" />
+      </button>
+      <button class="nav-btn" onclick="goGames()" title="Games">
+        <img src="/img/games.png" alt="Games" />
+      </button>
+      <button class="nav-btn" onclick="openBlank()" title="Blank Tab">
+        <img src="/img/new.png" alt="Blank" />
+      </button>
+      <button class="nav-btn" onclick="openBrowser()" title="Browser Tab">
+        <img src="/img/browser.png" alt="Browser" />
+      </button>
+      <button class="nav-btn" onclick="openCode()" title="GitHub Page">
+        <img src="/img/code.png" alt="Code" />
+      </button>
+    </div>
+
+    <script>
+      function goHome() {
+        document.getElementById("chillFrame").src = "home.html";
+      }
+
+      function goGames() {
+        document.getElementById("chillFrame").src = "games.html";
+      }
+
+      function openBlank() {
+        window.open("https://chillguyhub.netlify.app", "_blank");
+      }
+
+      function openBrowser() {
+        window.open("https://chillguyhub.netlify.app/wrapper.html", "_blank");
+      }
+
+      function openCode() {
+        window.open("https://github.com/rcreator822/ChillGuyHub/", "_blank");
+      }
+    </script>
+  </body>
+</html>
